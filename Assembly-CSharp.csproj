@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{26005786-6F87-D14A-9974-E2C6B23063D5}</ProjectGuid>
+    <ProjectGuid>{0B6F6AEB-BCD1-670A-ECC0-082DD49C6566}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -108,6 +108,9 @@
     <Compile Include="Assets\Scripts\SelfRotate.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\Scripts\KeyController.cs" />
+    <Compile Include="Assets\Scripts\blink.cs" />
+    <Compile Include="Assets\Scripts\rToStart.cs" />
+    <Compile Include="Assets\Scripts\slideController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
