@@ -234,7 +234,7 @@ MonoBehaviour:
   tileReset: 0
   isQuestion: 0
   correctTile: 1
-  timer: 8
+  timer: 5
   thisSlide: {fileID: 8068291}
   nextSlide: {fileID: 600214038}
   tm: {fileID: 444012241}
@@ -353,7 +353,7 @@ MonoBehaviour:
   tileReset: 0
   isQuestion: 0
   correctTile: 0
-  timer: 8
+  timer: 5
   thisSlide: {fileID: 92483081}
   nextSlide: {fileID: 2136925857}
   tm: {fileID: 444012241}
@@ -636,7 +636,7 @@ MonoBehaviour:
   tileReset: 0
   isQuestion: 0
   correctTile: 1
-  timer: 8
+  timer: 5
   thisSlide: {fileID: 176400878}
   nextSlide: {fileID: 2011038111}
   tm: {fileID: 444012241}
@@ -755,7 +755,7 @@ MonoBehaviour:
   tileReset: 0
   isQuestion: 0
   correctTile: 1
-  timer: 8
+  timer: 5
   thisSlide: {fileID: 244892553}
   nextSlide: {fileID: 715339646}
   tm: {fileID: 444012241}
@@ -974,7 +974,7 @@ MonoBehaviour:
   tileReset: 1
   isQuestion: 1
   correctTile: 2
-  timer: 15
+  timer: 10
   thisSlide: {fileID: 304154284}
   nextSlide: {fileID: 176400878}
   tm: {fileID: 444012241}
@@ -1378,7 +1378,7 @@ MonoBehaviour:
   tileReset: 0
   isQuestion: 0
   correctTile: 1
-  timer: 8
+  timer: 5
   thisSlide: {fileID: 406960077}
   nextSlide: {fileID: 304154284}
   tm: {fileID: 444012241}
@@ -1667,7 +1667,7 @@ MonoBehaviour:
   tileReset: 0
   isQuestion: 0
   correctTile: 0
-  timer: 6
+  timer: 5
   thisSlide: {fileID: 586671034}
   nextSlide: {fileID: 1274610167}
   tm: {fileID: 444012241}
@@ -1786,7 +1786,7 @@ MonoBehaviour:
   tileReset: 1
   isQuestion: 1
   correctTile: 3
-  timer: 15
+  timer: 10
   thisSlide: {fileID: 600214038}
   nextSlide: {fileID: 244892553}
   tm: {fileID: 444012241}
@@ -2117,7 +2117,7 @@ MonoBehaviour:
   tileReset: 0
   isQuestion: 0
   correctTile: 0
-  timer: 8
+  timer: 5
   thisSlide: {fileID: 827653981}
   nextSlide: {fileID: 1677964196}
   tm: {fileID: 444012241}
@@ -2426,7 +2426,7 @@ MonoBehaviour:
   tileReset: 0
   isQuestion: 0
   correctTile: 0
-  timer: 10
+  timer: 5
   thisSlide: {fileID: 912856598}
   nextSlide: {fileID: 586671034}
   tm: {fileID: 444012241}
@@ -3586,7 +3586,7 @@ MonoBehaviour:
   tileReset: 0
   isQuestion: 0
   correctTile: 0
-  timer: 8
+  timer: 5
   thisSlide: {fileID: 1677964196}
   nextSlide: {fileID: 912856598}
   tm: {fileID: 444012241}
@@ -3705,7 +3705,7 @@ MonoBehaviour:
   tileReset: 0
   isQuestion: 1
   correctTile: 1
-  timer: 15
+  timer: 10
   thisSlide: {fileID: 1705078603}
   nextSlide: {fileID: 92483081}
   tm: {fileID: 444012241}
@@ -4014,7 +4014,7 @@ MonoBehaviour:
   tileReset: 1
   isQuestion: 1
   correctTile: 0
-  timer: 15
+  timer: 10
   thisSlide: {fileID: 2011038111}
   nextSlide: {fileID: 8068291}
   tm: {fileID: 444012241}
@@ -4228,7 +4228,7 @@ MonoBehaviour:
   tileReset: 1
   isQuestion: 1
   correctTile: 0
-  timer: 15
+  timer: 10
   thisSlide: {fileID: 2136925857}
   nextSlide: {fileID: 406960077}
   tm: {fileID: 444012241}
