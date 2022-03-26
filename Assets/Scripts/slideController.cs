@@ -7,6 +7,7 @@ public class slideController : MonoBehaviour
 {
     public bool tileReset = false;
     public bool isQuestion = false;
+    public bool displaced = false;
     public int correctTile;
     public float timer = 15;
     public GameObject thisSlide;
@@ -19,15 +20,23 @@ public class slideController : MonoBehaviour
     public GameObject blueTile;
 
 
+
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
+        displaced = false;
         if (tileReset == true)
         {
             redTile.SetActive(true);
             greenTile.SetActive(true);
             yellowTile.SetActive(true);
             blueTile.SetActive(true);
+            displacement(0);
+
         }
 
 
@@ -40,7 +49,29 @@ public class slideController : MonoBehaviour
         timer -= Time.deltaTime;
 
         if (timer >= 0)
-        {
+        {   
+            if((Mathf.RoundToInt(timer) == 7) && (displaced == false)&&(tileReset == true))
+            {
+                int rand = Random.Range(0, 4);
+                displacement(rand);
+                displaced = true;
+            } else if (Mathf.RoundToInt(timer) == 7)
+            {
+
+            } else if ((Mathf.RoundToInt(timer) == 3) && (displaced == false) && (tileReset == true))
+            {
+                int rand = Random.Range(0, 4);
+                displacement(rand);
+                displaced = true;
+            }
+            else if (Mathf.RoundToInt(timer) == 3)
+            {
+
+            } else
+            {
+                displaced = false;
+            }
+            
             //tm.text = timer.ToString();
             tm.GetComponent<TextMeshPro>().text = "Slide timer : " + Mathf.RoundToInt(timer).ToString();
         }
@@ -55,11 +86,51 @@ public class slideController : MonoBehaviour
             callNextSlide();
         }
     }
-    public void updateTimer()
+    public void displacement(int tilePattern)
     {
+        //tiles_1.GetComponent<Transform>().position = new Vector3(-8.635223f, -5.610151f, -11.37794f);
+        print("displacement");
+        switch (tilePattern)
+        {
+            case 0:     
+                redTile.GetComponent<Transform>().position = new Vector3(-0.6772232f, -2.415052f, 7.412537f);
+                greenTile.GetComponent<Transform>().position = new Vector3(-0.6772232f, -2.415052f, 18.95224f);
+                yellowTile.GetComponent<Transform>().position = new Vector3(10.90778f, -2.415052f, 7.412537f);
+                blueTile.GetComponent<Transform>().position = new Vector3(10.92178f, -2.415052f, 18.95224f);
+                break;
 
+            case 1:
+                greenTile.GetComponent<Transform>().position = new Vector3(10.92178f, -2.415052f, 18.95224f);
+                redTile.GetComponent<Transform>().position = new Vector3(-0.6772232f, -2.415052f, 18.95224f);
+                yellowTile.GetComponent<Transform>().position = new Vector3(-0.6772232f, -2.415052f, 7.412537f);
+                blueTile.GetComponent<Transform>().position = new Vector3(10.90778f, -2.415052f, 7.412537f);
+                break;
+
+            case 2:
+                yellowTile.GetComponent<Transform>().position = new Vector3(-0.6772232f, -2.415052f, 18.95224f);
+                greenTile.GetComponent<Transform>().position = new Vector3(10.90778f, -2.415052f, 7.412537f);
+                redTile.GetComponent<Transform>().position = new Vector3(10.92178f, -2.415052f, 18.95224f);
+                blueTile.GetComponent<Transform>().position = new Vector3(-0.6772232f, -2.415052f, 7.412537f);
+                break;
+
+            case 3:
+                blueTile.GetComponent<Transform>().position = new Vector3(-0.6772232f, -2.415052f, 18.95224f);
+                greenTile.GetComponent<Transform>().position = new Vector3(-0.6772232f, -2.415052f, 7.412537f);
+                yellowTile.GetComponent<Transform>().position = new Vector3(10.92178f, -2.415052f, 18.95224f);
+                redTile.GetComponent<Transform>().position = new Vector3(10.90778f, -2.415052f, 7.412537f);
+                break;
+
+
+            default:
+                redTile.GetComponent<Transform>().position = new Vector3(-0.6772232f, -2.415052f, 7.412537f);
+                greenTile.GetComponent<Transform>().position = new Vector3(-0.6772232f, -2.415052f, 18.95224f);
+                yellowTile.GetComponent<Transform>().position = new Vector3(10.90778f, -2.415052f, 7.412537f);
+                blueTile.GetComponent<Transform>().position = new Vector3(10.92178f, -2.415052f, 18.95224f);
+                break;
+        }
 
     }
+    
     public void callNextSlide()
     {
 
@@ -69,6 +140,7 @@ public class slideController : MonoBehaviour
 
     public void tileRemoval(int correctAnswer)
     {
+        print("removal");
         switch (correctAnswer)
         {
             case 0:
