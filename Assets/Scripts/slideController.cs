@@ -10,6 +10,7 @@ public class slideController : MonoBehaviour
     public bool displaced = false;
     public int correctTile;
     public float timer = 15;
+    public float minPos = -2f;
     public GameObject thisSlide;
     public GameObject nextSlide;
     public TextMeshPro tm;
@@ -18,16 +19,15 @@ public class slideController : MonoBehaviour
     public GameObject greenTile;
     public GameObject yellowTile;
     public GameObject blueTile;
+    public GameObject player;
 
+    public GameObject switchTileText;
+    private AudioSource source;
+    public AudioClip next_sound;
 
-
-
-
-
-
-    // Start is called before the first frame update
     void Start()
     {
+        source = GetComponent<AudioSource>();
         displaced = false;
         if (tileReset == true)
         {
@@ -49,11 +49,14 @@ public class slideController : MonoBehaviour
         timer -= Time.deltaTime;
 
         if (timer >= 0)
-        {   
+        {
             if((Mathf.RoundToInt(timer) == 7) && (displaced == false)&&(tileReset == true))
             {
                 int rand = Random.Range(0, 4);
                 displacement(rand);
+                switchTileText.SetActive(true);
+                Invoke("DisableText", 0.5f);
+                SoundManager.PlaySound("Warning SFX");
                 displaced = true;
             } else if (Mathf.RoundToInt(timer) == 7)
             {
@@ -62,6 +65,9 @@ public class slideController : MonoBehaviour
             {
                 int rand = Random.Range(0, 4);
                 displacement(rand);
+                switchTileText.SetActive(true);
+                Invoke("DisableText", 0.5f);
+                SoundManager.PlaySound("Warning SFX");
                 displaced = true;
             }
             else if (Mathf.RoundToInt(timer) == 3)
@@ -80,16 +86,22 @@ public class slideController : MonoBehaviour
             //Otherwise display this
             tm.GetComponent<TextMeshPro>().text = "Time is up!";
             if(isQuestion == true)
-            {
+            { 
                 tileRemoval(correctTile);
+                //Debug.Log(player.transform.position.y);
+                
             }
             callNextSlide();
         }
     }
+    void DisableText()
+    {
+        switchTileText.SetActive(false);
+    }
     public void displacement(int tilePattern)
     {
+        
         //tiles_1.GetComponent<Transform>().position = new Vector3(-8.635223f, -5.610151f, -11.37794f);
-        print("displacement");
         switch (tilePattern)
         {
             case 0:     
@@ -136,14 +148,15 @@ public class slideController : MonoBehaviour
 
         nextSlide.SetActive(true);
         Destroy(thisSlide);
+        
+
     }
 
     public void tileRemoval(int correctAnswer)
     {
-        print("removal");
         switch (correctAnswer)
         {
-            case 0:
+            case 0:                
                 // red tile is correct
                 greenTile.SetActive(false);
                 yellowTile.SetActive(false);
@@ -151,7 +164,7 @@ public class slideController : MonoBehaviour
                 break;
 
             case 1:
-                // green tile is correct
+                // green tile is correct}
                 redTile.SetActive(false);
                 yellowTile.SetActive(false);
                 blueTile.SetActive(false);

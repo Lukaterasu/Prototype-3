@@ -5,23 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class death : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float loadDeathSceneDelay;
+    private void OnCollisionEnter(Collision collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
+        if (collision.transform.tag == "Death Tile")
         {
-            SceneManager.LoadScene("deathScene");
-
+            Invoke("LoadDeathScene", loadDeathSceneDelay);
         }
+    }
+    void LoadDeathScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

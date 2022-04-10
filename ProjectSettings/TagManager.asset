@@ -6,6 +6,9 @@ TagManager:
   tags:
   - CinemachineTarget
   - tile
+  - Death Tile
+  - Screen
+  - Enemy
   layers:
   - Default
   - TransparentFX
